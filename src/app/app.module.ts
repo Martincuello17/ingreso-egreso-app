@@ -29,7 +29,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     DetalleComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +40,6 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     AngularFireAuthModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
