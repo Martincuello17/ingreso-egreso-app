@@ -5,6 +5,7 @@ import { AppState } from 'src/app/app.reducer';
 import { IngresoEgreso } from 'src/app/models/ingreso-egreso.model';
 import { IngresoEgresoService } from 'src/app/services/ingreso-egreso.service';
 import Swal from 'sweetalert2';
+import { AppStateWithIngresoEgreso } from '../ingreso-egreso.reducers';
 
 @Component({
   selector: 'app-detalle',
@@ -15,7 +16,7 @@ export class DetalleComponent implements OnInit, OnDestroy {
   ingresosEgresos: IngresoEgreso[] = [];
   ingresosSubscription?: Subscription;
 
-  constructor(private store: Store<AppState>, private ingresoEgresoService: IngresoEgresoService) { }
+  constructor(private store: Store<AppStateWithIngresoEgreso>, private ingresoEgresoService: IngresoEgresoService) { }
 
   ngOnInit(): void {
     this.ingresosSubscription = this.store.select('ingresosEgresos').subscribe(({items}) => {
